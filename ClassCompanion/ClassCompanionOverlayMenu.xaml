@@ -1,0 +1,31 @@
+﻿<Window x:Class="ClassCompanion.ClassCompanionOverlayMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ClassCompanionOverlayMenu" Height="164.662" Width="750" AllowsTransparency="True" WindowStyle="None">
+    <Grid Background="#FF3C95FF" Opacity="0.8" KeyDown="Grid_KeyDown">
+
+
+        <ListBox x:Name="lstBox" Grid.Row="0" HorizontalAlignment="Center" Margin="10" Background="{x:Null}" BorderBrush="#FF63AAFF" BorderThickness="0" Foreground="#FF565656" ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" VerticalAlignment="Center" >
+            <ListBoxItem Content="Exit" FontSize="25" Background="#00D1D1D1" Foreground="#FF2C2C2C" BorderBrush="{x:Null}" Selected="ListBoxItem_Selected" Height="146" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5"/>
+        </ListBox>
+
+
+    </Grid>
+    
+    
+    
+    
+    
+    
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Duration="00:00:02" Storyboard.TargetProperty="Opacity" From="0" To=".9" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+
+
+</Window>

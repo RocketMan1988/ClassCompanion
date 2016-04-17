@@ -1,0 +1,121 @@
+﻿<Window x:Class="ClassCompanion.MainWindow" Name="This"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:ClassCompanion"
+        Title="ClassCompanion" Height="438.579" Width="861.105" ResizeMode="CanMinimize" Background="#FFFEFEFE" Closing="This_Closing">
+    <StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="124*"/>
+                <RowDefinition Height="9*"/>
+                <RowDefinition Height="0*"/>
+            </Grid.RowDefinitions>
+            <GroupBox Header="Console Output: " HorizontalAlignment="Left" Margin="583,238,0,0" VerticalAlignment="Top" Height="97" Width="242">
+                <TextBox x:Name="Console_TextBox" HorizontalAlignment="Left" Height="61" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="207" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+            </GroupBox>
+
+            <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="853">
+                <MenuItem Header="File">
+                    <MenuItem Header="Open Plan" HorizontalAlignment="Left" Width="140" IsEnabled="False"/>
+                    <MenuItem Header="Save Plan" HorizontalAlignment="Left" Width="140" IsEnabled="False"/>
+                    <Separator HorizontalAlignment="Left" Height="1" Width="140"/>
+                    <MenuItem Header="Exit" HorizontalAlignment="Left" Width="140" Click="close_Application"/>
+                </MenuItem>
+                <MenuItem Header="Edit">
+                    <MenuItem Header="Undo" HorizontalAlignment="Left" Width="140" IsEnabled="False"/>
+                    <MenuItem Header="Redo" HorizontalAlignment="Left" Width="140" IsEnabled="False"/>
+                    <Separator HorizontalAlignment="Left" Height="1" Width="150"/>
+                    <MenuItem Header="Move Up" HorizontalAlignment="Left" Width="140" Click="move_Up_Edit_Menu"/>
+                    <MenuItem Header="Move Down" HorizontalAlignment="Left" Width="150" Click="move_Down_Edit_Menu"/>
+                    <Separator HorizontalAlignment="Left" Height="1" Width="150"/>
+                    <MenuItem Header="Add Item" HorizontalAlignment="Left" Width="148" Margin="0,0,-8,0" Click="add_Content_Edit_Menu"/>
+                    <MenuItem x:Name="AddWebsiteMenu" Header="Add Website" HorizontalAlignment="Left" Width="155" Click="AddWebsiteMenu_Click"/>
+                    <MenuItem Header="Delete Item" HorizontalAlignment="Left" Width="148" Margin="0,0,-8,0" Click="delete_Content_Edit_Menu"/>
+                </MenuItem>
+                <MenuItem Header="Preview">
+                    <MenuItem Header="Preview Content" HorizontalAlignment="Left" Width="178" Click="preview_Content_Edit_Menu"/>
+                    <MenuItem Header="Preview Content + Control" HorizontalAlignment="Left" Width="270"  Click="MenuItem_Click_1"/>
+                </MenuItem>
+                <MenuItem Header="Options">
+                    <MenuItem Header="Content Options" HorizontalAlignment="Left" Width="200" Click="ContentOptionsMenuBar"/>
+                    <MenuItem Header="ClassCompanion Options" HorizontalAlignment="Left" Width="222" Click="MenuItem_Click_2"/>
+                </MenuItem>
+                <MenuItem Header="Add-In">
+                    <MenuItem Header="Load Add-In" HorizontalAlignment="Left" Width="170" Click="MenuItem_Click_4" />
+                    <MenuItem Header="Manage Add-Ins" HorizontalAlignment="Left" Width="250" Margin="0,0,-75,0" IsEnabled="False"/>
+                </MenuItem>
+                <MenuItem Header="Help" Click="MenuItem_Click">
+                    <MenuItem Header="About ClassCompanion" HorizontalAlignment="Left" Width="225" Click="about_menu_open"/>
+                    <MenuItem Header="Contact Me" HorizontalAlignment="Left" Width="175" Click="MenuItem_Click_3"/>
+                    <MenuItem Header="Help" HorizontalAlignment="Left" Width="175" IsEnabled="False"/>
+                </MenuItem>
+            </Menu>
+            <GroupBox Header="Lesson Content" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Height="347" Width="563"/>
+            <GroupBox Header="Lesson's Date" HorizontalAlignment="Left" Margin="583,25,0,0" VerticalAlignment="Top" Height="213" Width="242"/>
+            <Button Content="Add" HorizontalAlignment="Left" Margin="29,343,0,0" VerticalAlignment="Top" Width="55" Height="20" FontFamily="Yu Gothic" FontSize="11" Foreground="Black" FontWeight="Bold" Click="add_Content_Button">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Calendar HorizontalAlignment="Left" Margin="583,52,0,0" VerticalAlignment="Top" Width="242" Height="186"/>
+            <Button Content="Preview Content" HorizontalAlignment="Left" Margin="596,347,0,0" VerticalAlignment="Top" Width="112" Height="20" Click="preview_Content_Button"/>
+            <Button Name="start_Lesson" Content="Start Lesson" HorizontalAlignment="Left" Margin="713,347,0,0" VerticalAlignment="Top" Width="112" Height="20" Click="start_Lesson_Click"/>
+            <Button Content="Content Options" HorizontalAlignment="Left" Margin="249,343,0,0" VerticalAlignment="Top" Width="112" Height="20" FontFamily="Yu Gothic" FontSize="11" FontWeight="Bold" Click="Button_Click">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <StatusBar HorizontalAlignment="Left" Height="22" Margin="0,5,0,0" VerticalAlignment="Top" Width="853" Grid.Row="1"/>
+            <Label Content="Status:" HorizontalAlignment="Left" Width="65" Margin="-2,1,0,0" Grid.Row="1" FontFamily="Segoe UI Light" FontWeight="Bold"/>
+            <ProgressBar HorizontalAlignment="Left" Height="11" Margin="629,10,0,0" VerticalAlignment="Top" Width="211" Grid.Row="1"/>
+            <Button Content="Remove" HorizontalAlignment="Left" Margin="89,343,0,0" VerticalAlignment="Top" Width="55" Height="20" FontFamily="Yu Gothic" FontSize="11" Foreground="Black" FontWeight="Bold" Click="remove_Content_Button">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="Up" HorizontalAlignment="Left" Margin="461,343,0,0" VerticalAlignment="Top" Width="40" Height="20" FontFamily="Yu Gothic" FontSize="11" Foreground="Black" FontWeight="Bold" Click="up_Content_Button">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button Content="Down" HorizontalAlignment="Left" Margin="510,343,0,0" VerticalAlignment="Top" Width="40" Height="20" FontFamily="Yu Gothic" FontSize="11" Foreground="Black" FontWeight="Bold" Click="down_Content_Button">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <ListView x:Name="contentListView" Height="285" Margin="24,50,300,0" VerticalAlignment="Top" ItemsSource="{Binding ElementName=This, Path=ContentCollection}" AllowDrop="True" Drop="OnDrop" DragEnter="Content_DragEnter" IsVisibleChanged="contentListView_IsVisibleChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Name}">
+                            <GridViewColumnHeader 
+							Tag="Name" 
+							Content="Name" />
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Location}">
+                            <GridViewColumnHeader
+							Tag="Location" 
+							Content="Location" />
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Subject}">
+                            <GridViewColumnHeader
+							Tag="Subject" 
+							Content="Subject" />
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding ContentType}">
+                            <GridViewColumnHeader
+							Tag="ContentType" 
+							Content="Content Type" />
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding ContentControl}">
+                            <GridViewColumnHeader
+							Tag="ContentControl" 
+							Content="Content Control" />
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Label x:Name="status" Content="" HorizontalAlignment="Left" Width="587" Margin="37,3,0,-2" Grid.Row="1" FontFamily="Segoe UI Light" FontSize="10" Grid.RowSpan="2"/>
+
+        </Grid>
+    </StackPanel>
+</Window>
